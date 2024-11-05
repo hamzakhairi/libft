@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:48:06 by hkhairi           #+#    #+#             */
-/*   Updated: 2024/11/01 20:08:23 by hkhairi          ###   ########.fr       */
+/*   Updated: 2024/11/05 14:58:38 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	start;
 	size_t	end;
 
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
+	if (set == 0 || set[0] == 0)
+		return (ft_strdup(s1));
 	start = 0;
 	end = ft_strlen(s1);
 	while (s1[start] && check_if_in_set(s1[start], set))

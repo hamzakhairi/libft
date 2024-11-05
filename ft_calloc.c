@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:58:14 by hkhairi           #+#    #+#             */
-/*   Updated: 2024/11/01 10:35:22 by hkhairi          ###   ########.fr       */
+/*   Updated: 2024/11/05 22:43:21 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*res;
 
+	if (count != 0 && (count * size) / count != size)
+		return (NULL);
 	res = malloc(count * size);
 	if (res == NULL)
 		return (NULL);

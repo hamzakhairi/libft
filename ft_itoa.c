@@ -6,13 +6,13 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 16:56:24 by hkhairi           #+#    #+#             */
-/*   Updated: 2024/11/01 17:07:38 by hkhairi          ###   ########.fr       */
+/*   Updated: 2024/11/05 10:21:32 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	len_of_number(int n)
+static int	len_of_number(int n)
 {
 	int	count;
 
@@ -29,6 +29,14 @@ int	len_of_number(int n)
 	return (count);
 }
 
+static unsigned int	n_to_nbr(int n)
+{
+	if (n < 0)
+		return (-n);
+	else
+		return (n);
+}
+
 char	*ft_itoa(int n)
 {
 	int				len_nbr;
@@ -41,14 +49,12 @@ char	*ft_itoa(int n)
 		return (NULL);
 	res[len_nbr] = '\0';
 	if (n < 0)
-	{
 		res[0] = '-';
-		nbr = -n;
-	}
-	else
-		nbr = n;
+	nbr = n_to_nbr(n);
 	while (len_nbr-- > 0 && nbr != 0)
 	{
+		if (len_nbr == 0 && n < 0)
+			break ;
 		res[len_nbr] = (nbr % 10) + '0';
 		nbr /= 10;
 	}

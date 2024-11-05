@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:34:16 by hkhairi           #+#    #+#             */
-/*   Updated: 2024/10/31 16:39:37 by hkhairi          ###   ########.fr       */
+/*   Updated: 2024/11/04 18:28:19 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	len_src;
 	size_t	len_dst;
 
+	if (!dst && dstsize == 0)
+		return (ft_strlen(src));
 	len_src = ft_strlen(src);
 	len_dst = ft_strlen(dst);
 	if (dstsize <= len_dst)

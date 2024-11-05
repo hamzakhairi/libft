@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strjoin.c                                    :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 09:56:06 by hkhairi           #+#    #+#             */
-/*   Updated: 2024/11/01 11:37:06 by hkhairi          ###   ########.fr       */
+/*   Updated: 2024/11/04 22:56:36 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	size_s2;
 	char	*res;
 
+	if (!s1 || !s2)
+		return (NULL);
 	size_s1 = ft_strlen(s1);
 	size_s2 = ft_strlen(s2);
 	res = (char *)ft_calloc((size_s1 + size_s2 + 1), sizeof(char));
@@ -25,5 +27,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_memcpy(res, s1, size_s1);
 	ft_memcpy(res + size_s1, s2, size_s2);
+	res[size_s1 + size_s2] = '\0';
 	return (res);
 }
