@@ -6,13 +6,13 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 12:51:32 by hkhairi           #+#    #+#             */
-/*   Updated: 2024/11/05 23:15:12 by hkhairi          ###   ########.fr       */
+/*   Updated: 2024/11/09 16:05:42 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstmap_cleanup(t_list *new_list,
+static void	ft_lstmap_cleanup(t_list *new_list,
 	void *new_content, void (*del)(void *))
 {
 	del(new_content);

@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 11:57:55 by hkhairi           #+#    #+#             */
-/*   Updated: 2024/11/04 15:03:26 by hkhairi          ###   ########.fr       */
+/*   Updated: 2024/11/09 16:01:30 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	if (dst == NULL && src == NULL)
 		return (NULL);
+	if (dst == src)
+		return (dst);
 	ptr_dst = (unsigned char *)dst;
 	ptr_src = (const unsigned char *)src;
 	if (ptr_dst < ptr_src)

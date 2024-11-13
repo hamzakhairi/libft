@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 19:45:38 by hkhairi           #+#    #+#             */
-/*   Updated: 2024/11/04 23:22:47 by hkhairi          ###   ########.fr       */
+/*   Updated: 2024/11/08 15:24:34 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
+	if (!s || fd == -1)
+		return ;
 	i = 0;
 	while (s[i])
 	{

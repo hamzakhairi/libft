@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 15:22:51 by hkhairi           #+#    #+#             */
-/*   Updated: 2024/11/04 21:47:17 by hkhairi          ###   ########.fr       */
+/*   Updated: 2024/11/13 14:08:41 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	j = 0;
 	if (!*needle)
 		return ((char *)haystack);
+	if (!haystack && len == 0)
+		return (NULL);
 	while (haystack[i] && i < len)
 	{
 		j = 0;
@@ -33,4 +35,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		i++;
 	}
 	return (NULL);
+}
+
+#include <string.h>
+#include <stdio.h>
+int main()
+{
+	printf("%s",strnstr(NULL,"iyfoy",5));
 }

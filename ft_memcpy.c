@@ -6,7 +6,7 @@
 /*   By: hkhairi <hkhairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 14:38:12 by hkhairi           #+#    #+#             */
-/*   Updated: 2024/11/03 19:34:57 by hkhairi          ###   ########.fr       */
+/*   Updated: 2024/11/09 10:14:17 by hkhairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	if (dst == NULL && src == NULL)
 		return (NULL);
+	if (dst == src)
+		return (dst);
 	ptr_dst = (unsigned char *)dst;
 	ptr_src = (unsigned char *)src;
 	while (n--)
